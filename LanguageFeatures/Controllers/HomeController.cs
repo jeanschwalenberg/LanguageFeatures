@@ -36,6 +36,18 @@ namespace LanguageFeatures.Controllers
                 (object)String.Format("Category: {0}", myProduct.Category));
         }
 
+        public ViewResult CreateCollection() {
+            string[] stringArray = { "apple", "orange", "plum" };
+
+            List<int> intList = new List<int> { 10, 20, 30, 40 };
+
+            Dictionary<string, int> myDict = new Dictionary<string, int> {
+                { "apple", 10 }, { "orange", 20 }, { "plum", 30 }
+            };
+
+            return View("Result", (object)stringArray[1]);
+        }
+
         /*public ViewResult AutoProperty() {
             //create a new Product object
             Product myProduct = new Product();
