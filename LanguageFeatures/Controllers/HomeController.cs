@@ -13,6 +13,8 @@ namespace LanguageFeatures.Controllers
             return "Navigate to a URL to show an example.";
         }
 
+
+
         public ViewResult CreateProduct() {
             /*//create new product object
             Product myProduct = new Product();
