@@ -50,6 +50,23 @@ namespace LanguageFeatures.Controllers
             return View("Result", (object)stringArray[1]);
         }
 
+        public ViewResult UseExtension() {
+            //create and populate shopping cart
+            ShoppingCart cart = new ShoppingCart
+            {
+                Products = new List<Product> {
+                    new Product {Name = "Kayak", Price = 275M },
+                    new Product {Name = "Lifejacket", Price = 48.95M },
+                    new Product {Name = "Soccer ball", Price = 19.50M },
+                    new Product {Name = "Corner flag", Price = 34.95M }
+                }
+            };
+            //get the total value of products in the cart
+            decimal cartTotal = cart.TotalPrices();
+            return View("Result",
+                (object)String.Format("Total: {0:c}", cartTotal));
+        }
+
         /*public ViewResult AutoProperty() {
             //create a new Product object
             Product myProduct = new Product();
